@@ -1,4 +1,4 @@
-import { ADD_NEW_TASK, DELETE_TASK, REVERSE_STATUS_OF_TASK } from "../types";
+import { TASK_ADD_NEW, TASK_DELETE, TASK_REVERSE_STATUS } from "../types";
 
 const initState = {
   allTasks: [],
@@ -13,7 +13,7 @@ const taskReducers = (
   action: any
 ) => {
   switch (action.type) {
-    case ADD_NEW_TASK:
+    case TASK_ADD_NEW:
       return {
         ...state,
         allTasks: [
@@ -21,7 +21,7 @@ const taskReducers = (
           { status: false, whatTodo: action.payload.whatTodo },
         ],
       };
-    case REVERSE_STATUS_OF_TASK:
+    case TASK_REVERSE_STATUS:
       return {
         ...state,
         allTasks: state.allTasks.map((value, index) => {
@@ -31,7 +31,7 @@ const taskReducers = (
           return { ...value, status: !value.status };
         }),
       };
-    case DELETE_TASK:
+    case TASK_DELETE:
       state.allTasks.splice(action.payload.index, 1);
       return { ...state };
     default:

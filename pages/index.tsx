@@ -7,11 +7,13 @@ import {
   reverseStatusOfTask,
 } from "../store/actions/taskActions";
 import { useTypedDispatch, useTypedSelector } from "../store/store";
+import { incrementCount } from "../store/actions/counterActions";
 
 const Home: NextPage = () => {
   const [newTaskText, setNewTaskText] = useState("");
   const dispatch = useTypedDispatch();
   const { allTasks } = useTypedSelector((state) => state.tasks);
+  const { count } = useTypedSelector((state) => state.counter);
 
   return (
     <div className={styles.container}>
@@ -39,6 +41,8 @@ const Home: NextPage = () => {
           <button onClick={() => dispatch(deleteTask(index))}>DELETE</button>
         </>
       ))}
+      <div style={{ marginTop: 400 }}>Count: {count}</div>
+      <button onClick={() => dispatch(incrementCount())}>increment</button>
     </div>
   );
 };

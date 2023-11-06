@@ -1,3 +1,5 @@
-export const ADD_NEW_TASK = "ADD_NEW_TASK";
-export const REVERSE_STATUS_OF_TASK = "REVERSE_STATUS_OF_TASK";
-export const DELETE_TASK = "DELETE_TASK";
+export const TASK_ADD_NEW = "TASK_ADD_NEW";
+export const TASK_REVERSE_STATUS = "TASK_REVERSE_STATUS";
+export const TASK_DELETE = "TASK_DELETE";
+
+export const COUNTER_ADD = "COUNTER_ADD";
